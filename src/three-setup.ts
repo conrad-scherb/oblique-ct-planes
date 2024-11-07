@@ -41,7 +41,7 @@ export function setupThreeCanvas(volume: Volume) {
 
     meshes.forEach((mesh) => scene.remove(mesh));
     const newMeshes = drawCurrentScene(scene, volume, plane);
-    meshes.push(...newMeshes);
+    meshes.splice(0, meshes.length, ...newMeshes);
 
     renderer.render(scene, camera);
   }
